@@ -1,0 +1,7 @@
+{
+  "quiet": true,
+  "watch": [".env", "."],
+  "ext": "ts,json",
+  "ignore": ["**/*.spec.ts", "node_modules/**/*.ts", "**/*.d.ts"],
+  "exec": "ts-node -r tsconfig-paths/register ./main.ts"
+}

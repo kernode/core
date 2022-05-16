@@ -1,0 +1,8 @@
+node_modules
+/storage
+/config
+/routes
+/dist
+
+.env
+.DS_Store
