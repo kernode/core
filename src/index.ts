@@ -1,4 +1,4 @@
-import Http from './Application/Http'
+import Http from './Http'
 import Config from './Config'
 import Env from './Env'
 import Auth from './Auth'
@@ -8,7 +8,7 @@ import Singleton from './Singleton'
 import Storage from './Storage'
 import SocketListener from './Socket/SocketListener'
 import SocketProvider from './Socket/SocketProvider'
-import { Router, ApiRouter } from './Application/Router'
+import { Router, ApiRouter } from './Http/Router'
 
 import {
   Middleware,

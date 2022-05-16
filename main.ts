@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import Http from './src/Application/Http'
+import Http from './src/Http'
 import Config from './src/Config'
 
 const kernel = {
