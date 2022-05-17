@@ -1,7 +1,9 @@
+import { AppEventEmitter } from './src/Event'
 import 'dotenv/config'
 import { SocketProvider } from './src/Socket'
 import Config from './src/Config'
 import Http from './src/Http'
+import { EventListener, EventProvider } from './src/Event'
 
 const kernel = {
   global: [],
@@ -22,3 +24,11 @@ SocketProvider.register({
   routePath: process.cwd() + '/routes/socket',
   kernel,
 })
+
+EventProvider.register({
+  routePath: process.cwd() + '/routes/event',
+})
+
+setTimeout(() => {
+  AppEventEmitter.emit('message', { name: 'AJ' })
+}, 2000)
