@@ -1,7 +1,9 @@
 {
   /* Visit https://aka.ms/tsconfig.json to read more about this file */
   "compilerOptions": {
+    "baseUrl": ".",
     "declaration": true,
+    "declarationMap" : true,
     "experimentalDecorators" : true,
     "target": "es5",                                      /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "module": "commonjs",                                /* Specify what module code is generated. */
