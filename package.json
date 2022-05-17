@@ -1,7 +1,7 @@
 {
   "name": "@kernode/core",
-  "description": "Kernode core",
-  "version": "1.0.4",
+  "description": "Core of Kernode",
+  "version": "1.0.8",
   "main": "./dist/src",
   "files": [
     "dist/**/*"
@@ -13,6 +13,12 @@
     "migrate:rollback": "npx knex migrate:rollback",
     "make:migration": "npx knex migrate:make"
   },
+  "keywords": [
+    "kernode",
+    "framework",
+    "mvc",
+    "node.js"
+  ],
   "dependencies": {
     "aws-sdk": "^2.1135.0",
     "bcrypt": "^5.0.1",

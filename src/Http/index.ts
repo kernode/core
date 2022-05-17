@@ -87,3 +87,5 @@ class Http {
   }
 }
 export default new Http()
+
+export { Router, ApiRouter }
