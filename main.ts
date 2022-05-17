@@ -1,6 +1,7 @@
 import 'dotenv/config'
-import Http from './src/Http'
+import { SocketProvider } from './src/Socket'
 import Config from './src/Config'
+import Http from './src/Http'
 
 const kernel = {
   global: [],
@@ -16,8 +17,8 @@ Http.register({
   port: Config.AppConfig.serverPort,
 })
 
-// SocketProvider.register({
-//   httpServer: Http.server,
-//   routePath: process.cwd() + '/routes/socket',
-//   kernel,
-// })
+SocketProvider.register({
+  httpServer: Http.server,
+  routePath: process.cwd() + '/routes/socket',
+  kernel,
+})

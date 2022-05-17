@@ -20,8 +20,6 @@ class ConfigClass extends Singleton {
   }
 
   private getConfig() {
-    console.log('getting config data')
-
     this.AppConfig = require(process.cwd() + '/config/app').default
     this.DatabaseConfig = require(process.cwd() + '/config/database').default
     this.HashConfig = require(process.cwd() + '/config/hash').default

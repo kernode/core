@@ -3,5 +3,5 @@
   "watch": [".env", "."],
   "ext": "ts,json",
   "ignore": ["**/*.spec.ts", "node_modules/**/*.ts", "**/*.d.ts"],
-  "exec": "ts-node -r tsconfig-paths/register ./main.ts"
+  "exec": "ts-node -r dotenv/config -r tsconfig-paths/register ./main.ts"
 }
