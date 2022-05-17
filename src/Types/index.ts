@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import { Socket } from 'socket.io'
+
 interface SocketMiddleware {
   register(socket: Socket, next: Function): any
 }
@@ -15,4 +16,12 @@ interface Kernel {
   socket: SocketMiddleware[]
 }
 
-export { Middleware, SocketMiddleware, Kernel, Request, Response, NextFunction }
+export {
+  Middleware,
+  SocketMiddleware,
+  Kernel,
+  Request,
+  Response,
+  NextFunction,
+  Socket,
+}
