@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
 import { Socket } from 'socket.io'
+import Singleton from './Singleton'
 
 interface SocketMiddleware {
   register(socket: Socket, next: Function): any
@@ -24,4 +25,5 @@ export {
   Response,
   NextFunction,
   Socket,
+  Singleton,
 }

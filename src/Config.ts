@@ -1,4 +1,4 @@
-import Singleton from './Singleton'
+import Singleton from './Types/Singleton'
 import {
   AppConfig,
   DatabaseConfig,

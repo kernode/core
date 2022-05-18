@@ -1,10 +1,10 @@
-import { knex } from '../Database'
+import { Database } from '../Database'
 
 class Model {
   tableName: string
 
   public query() {
-    return knex<this, this[]>(this.tableName)
+    return Database<this, this[]>(this.tableName)
   }
 }
 

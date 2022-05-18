@@ -2,6 +2,6 @@ import { Knex } from 'knex'
 import DatabaseProvider from './DatabaseProvider'
 
 let provider = DatabaseProvider.register()
-let knex: Knex = provider.getDatabase()
+let Database: Knex = provider.getDatabase()
 
-export { DatabaseProvider, knex }
+export { DatabaseProvider, Database }

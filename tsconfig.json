@@ -3,7 +3,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "declaration": true,
-    "declarationMap" : true,
     "experimentalDecorators" : true,
     "target": "es5",                                      /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "module": "commonjs",                                /* Specify what module code is generated. */
@@ -17,7 +16,7 @@
     "strictPropertyInitialization": false,               /* Check for class properties that are declared but not set in the constructor. */
     "skipLibCheck": true,                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "**/__tests__/*", "main.ts"]
+  "include": ["src", "main.ts", "Env.ts"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }
 

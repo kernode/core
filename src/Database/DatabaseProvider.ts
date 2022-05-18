@@ -1,6 +1,6 @@
 import knex, { Knex } from 'knex'
 import Config from '../Config'
-import Singleton from '../Singleton'
+import Singleton from '../Types/Singleton'
 
 class DatabaseProvider extends Singleton {
   private knex: Knex
