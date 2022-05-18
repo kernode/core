@@ -3,6 +3,8 @@ import express from 'express'
 import fileUpload from 'express-fileupload'
 import { Router, ApiRouter } from './Router'
 import { Kernel, Middleware } from '../Types'
+import rateLimit from 'express-rate-limit'
+import Config from '../Config'
 
 class Http {
   server: HttpServer
@@ -28,6 +30,7 @@ class Http {
 
       this.app = express()
       this.handleMultipart()
+        .handleRateLimiter()
         .registerGlobalMiddleware()
         .registerWebMiddleware(webRoutePath)
         .registerApiMiddleware(apiRoutePath)
@@ -43,6 +46,17 @@ class Http {
         `🚀 [${process.env.NODE_ENV}] Server started on : http://127.0.0.1:${port}`
       )
     })
+  }
+
+  handleRateLimiter() {
+    const RateLimiter = rateLimit({
+      windowMs: 1 * 60 * 1000,
+      max: Config.AppConfig.rateLimit,
+      standardHeaders: true,
+      legacyHeaders: false,
+    })
+    this.app.use(RateLimiter)
+    return this
   }
 
   /**for multipart file upload */
