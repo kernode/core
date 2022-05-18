@@ -1,8 +1,8 @@
 {
   "name": "@kernode/core",
   "description": "Core of Kernode",
-  "version": "1.0.10",
-  "main": "./index.js",
+  "version": "1.0.19",
+  "main": "./Class/index.js",
   "files": [
     "Class/**/*"
   ],
@@ -19,9 +19,6 @@
     "mvc",
     "node.js"
   ],
-  "exports": {
-    ".": "./dist/src"
-  },
   "dependencies": {
     "aws-sdk": "^2.1135.0",
     "bcrypt": "^5.0.1",
