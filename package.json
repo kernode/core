@@ -1,14 +1,15 @@
 {
   "name": "@kernode/core",
   "description": "Core of Kernode",
-  "version": "1.0.19",
-  "main": "./Class/index.js",
+  "version": "1.0.23",
+  "main": "./index.js",
   "files": [
-    "Class/**/*"
+    "**/*.d.ts",
+    "**/*.js"
   ],
   "scripts": {
     "dev": "nodemon",
-    "build": "npx tsc && npx minimize-js ./Class",
+    "build": "npx tsc",
     "migrate": "npx knex migrate:latest",
     "migrate:rollback": "npx knex migrate:rollback",
     "make:migration": "npx knex migrate:make"

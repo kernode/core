@@ -3,6 +3,8 @@ node_modules
 /routes
 /dist
 /Class
+*.js
+*.d.ts
 
 .env
 .DS_Store
