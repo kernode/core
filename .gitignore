@@ -1,8 +1,8 @@
 node_modules
-/storage
 /config
 /routes
 /dist
+/Class
 
 .env
 .DS_Store

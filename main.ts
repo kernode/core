@@ -1,10 +1,10 @@
-import { AppEventEmitter } from './src/Event'
+import { AppEventEmitter } from './Event'
 import 'dotenv/config'
-import { SocketProvider } from './src/Socket'
-import Config from './src/Config'
-import Http from './src/Http'
-import Model from './src/Model'
-import { EventProvider } from './src/Event'
+import { SocketProvider } from './Socket'
+import Config from './Config'
+import Http from './HttpServer'
+import Model from './Model'
+import { EventProvider } from './Event'
 
 const kernel = {
   global: [],
