@@ -5,6 +5,7 @@ import { Router, ApiRouter } from './Router'
 import { Kernel, Middleware } from '../Types'
 import rateLimit from 'express-rate-limit'
 import Config from '../Config'
+import bodyParser from 'body-parser'
 
 class Http {
   server: HttpServer
@@ -30,6 +31,7 @@ class Http {
 
       this.app = express()
       this.handleMultipart()
+        .handleParser()
         .handleRateLimiter()
         .registerGlobalMiddleware()
         .registerWebMiddleware(webRoutePath)
@@ -46,6 +48,12 @@ class Http {
         `🚀 [${process.env.NODE_ENV}] Server started on : http://127.0.0.1:${port}`
       )
     })
+  }
+
+  handleParser() {
+    this.app.use(bodyParser.json())
+    this.app.use(bodyParser.urlencoded({extended: false}))
+    return this
   }
 
   handleRateLimiter() {
