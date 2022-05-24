@@ -14,8 +14,7 @@ class LocalDisk implements DiskInterface {
   pathName: string
 
   constructor() {
-    this.STORAGE =
-      Config.StorageConfig.storage.adapters.local.folder || storagePath()
+    this.STORAGE = Config.StorageConfig.storage.adapters.local.folder || storagePath()
   }
 
   path(path: any): this {

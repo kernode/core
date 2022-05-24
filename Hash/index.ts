@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import Config from './Config'
+import Config from '../Config'
 
 class Hash {
   public make(password: string) {

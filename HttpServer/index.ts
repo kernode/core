@@ -14,45 +14,35 @@ class Http {
 
   kernel: Kernel
 
-  public register({
-    webRoutePath,
-    apiRoutePath,
-    kernel,
-    port,
-  }: {
-    webRoutePath: string
-    apiRoutePath: string
-    kernel: Kernel
-    port: number
-  }) {
+  public register({ webRoutePath, apiRoutePath, kernel, port }: { webRoutePath: string; apiRoutePath: string; kernel: Kernel; port: number }) {
     if (!this.server) {
       this.kernel = kernel
       console.log('\x1b[33m%s\x1b[0m', '[✅] Creating http server')
 
       this.app = express()
-      this.handleMultipart()
-        .handleParser()
-        .handleRateLimiter()
-        .registerGlobalMiddleware()
-        .registerWebMiddleware(webRoutePath)
-        .registerApiMiddleware(apiRoutePath)
-        .run(port)
+      this.handleMultipart().handleParser().handleRateLimiter().registerGlobalMiddleware().registerWebMiddleware(webRoutePath).registerApiMiddleware(apiRoutePath).run(port)
     }
+  }
+
+  getApp() {
+    return this.app
+  }
+
+  use(middleware: any) {
+    this.app.use(middleware)
+    return this
   }
 
   run(port: number) {
     this.server = createServer(this.app)
     this.server.listen(port, () => {
-      console.log(
-        '\x1b[36m%s\x1b[0m',
-        `🚀 [${process.env.NODE_ENV}] Server started on : http://127.0.0.1:${port}`
-      )
+      console.log('\x1b[36m%s\x1b[0m', `🚀 [${process.env.NODE_ENV}] Server started on : http://127.0.0.1:${port}`)
     })
   }
 
   handleParser() {
     this.app.use(bodyParser.json())
-    this.app.use(bodyParser.urlencoded({extended: false}))
+    this.app.use(bodyParser.urlencoded({ extended: false }))
     return this
   }
 

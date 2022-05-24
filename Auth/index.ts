@@ -1,5 +1,5 @@
 import jwt, { JwtPayload } from 'jsonwebtoken'
-import Config from './Config'
+import Config from '../Config'
 
 class Auth {
   token(user: object): string {

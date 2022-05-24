@@ -5,11 +5,7 @@ import mime from 'mime-types'
 import { Response } from 'express'
 import PATH from 'path'
 
-import S3, {
-  PutObjectRequest,
-  GetObjectOutput,
-  DeleteObjectRequest,
-} from 'aws-sdk/clients/s3'
+import S3, { PutObjectRequest, GetObjectOutput, DeleteObjectRequest } from 'aws-sdk/clients/s3'
 import Config from '../Config'
 import { removeSlash } from '../Helper'
 
